@@ -1,0 +1,26 @@
+.container-fluid {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-top: 1em;
+  bottom: 0;
+  box-sizing: border-box;
+  background: #f9f9f9;
+  color: black;
+  text-shadow: 0 -1px 1px 0 darkgray;
+}
+
+.links ul {
+    margin: .5em 0;
+    padding: 0;
+}
+
+.links ul li {
+    color: gray;
+    list-style: none;
+    line-height: 2.4em;
+}
+
+.links p {
+    font-size: .9em;
+    color: #a7a7a7;
+}

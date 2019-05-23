@@ -1,0 +1,30 @@
+<div style="width: 80%;background: transparent;
+            margin: 0px auto;
+            height: auto;">
+
+  <div class="spinner" *ngIf="rservice.restaurantsList.length === 0"></div>
+  <div *ngIf="displayalert" style="width: 80%;margin: 0px auto;">
+    <div class="alert-msg">
+        <ngb-alert [type]="warning" (close)="close(alert)">{{alertMsg}}</ngb-alert>
+    </div>    
+  </div>
+  <div class="searchformcls">
+    <div class="add-new-restaurant">
+      <button (click)="addNewRestaurant()"> <i class='fa fa-plus'></i> Add New Restaurant </button>
+    </div>
+    <form [formGroup]="searchForm">
+        <div class="srchgrpcls">
+          <i class="fa fa-search srchiconcls" aria-hidden="true"></i>
+          <input type="text" formControlName="srchText" class="srchtxtcls">
+        </div>
+        <div class="srchbtncls">
+            <button type="submit" [disabled]="!searchForm.valid" (click)="filterRestaurant()"> Filter</button>
+        </div>
+    </form>
+  </div>
+
+  <div style= "    width: 70%;
+  margin: 0px auto; position: relative;">
+    <app-restaurant *ngFor="let restaurant of rservice.restaurantsList" [restaurant]="restaurant"> </app-restaurant>
+  </div>
+</div>

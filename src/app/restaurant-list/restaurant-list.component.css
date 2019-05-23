@@ -1,0 +1,81 @@
+.searchformcls{
+    display: block;
+    width: 70%;
+    text-align: right;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.srchgrpcls {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    padding: .5em;
+    background: #e7e7e7;
+}
+
+.srchiconcls{
+    position: absolute;
+    color: white;
+    font-size: x-large;
+    padding: 0px;
+    margin: 0px;
+}
+
+.alert-msg {
+    width: 80%; 
+    margin: 0px auto;
+    background-color: rgba(224, 18, 18, 0.932);
+    border-radius: 3px;
+    color: white;
+    transition: all 2s linear;
+}
+
+.add-new-restaurant {
+    float: left;
+    display: inline-block;
+}
+
+.srchtxtcls{
+    border: none;
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0);
+    width: 19em;
+    background-color: transparent;
+    padding-left: 1.7em;
+    color: darkgrey;
+    outline: none;
+}
+
+.srchbtncls {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+button{
+    border: none;
+    color: white;
+    padding: .5em;
+    border-radius: 3px;
+    background-color: #344568;
+}
+
+.spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 7em;
+    height: 7em;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: white;
+    border-bottom-color: white;
+    animation: spinner .8s ease infinite;
+}
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+  }

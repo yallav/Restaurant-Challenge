@@ -1,0 +1,98 @@
+<div style="width:80%; margin: 0px auto; padding: 2px; ">
+  <div style="width:60%; margin: 0px auto; color: grey; text-shadow: 0px 0px 1px black">
+    <h3>New Restaurant Page</h3>
+  </div>  
+</div>
+
+<div class="mid-container">
+    <div *ngIf="displayFormValidAlert" style="width: 80%;margin: 0px auto;">
+        <div class="alert-error-msg">
+            <ngb-alert [type]="warning" (close)="close(alert)">{{alertMsg}}</ngb-alert>
+        </div>    
+    </div>
+
+    <div *ngIf="displaySuccessfulAlert" style="width: 80%;margin: 0px auto;">
+        <div class="alert-success-msg">
+            <ngb-alert [type]="warning" (close)="close(alert)">{{alertMsg}}</ngb-alert>
+        </div>    
+    </div>
+
+    <form novalidate #restaurantform="ngForm">
+      
+      <h4>Restaurant Details</h4>
+      <input type="text" name="rName" [(ngModel)]="restaurantFormModel.restname" placeholder="Restaurant Name" class="input-style" required #Restaurantname="ngModel">
+			<div class="form-control-feedback"
+			     *ngIf="Restaurantname.errors && (Restaurantname.dirty || Restaurantname.touched)">
+				<p *ngIf="Restaurantname.errors.required">Restaurant name is required</p>
+			</div>
+
+      <input type="text" name="rStreet" [(ngModel)]="restaurantFormModel.street" placeholder="Street" class="input-style" required #Street="ngModel">
+      <div class="form-control-feedback"
+          *ngIf="Street.errors && (Street.dirty || Street.touched)">
+        <p *ngIf="Street.errors.required">Enter valid Street Address</p>
+      </div>
+
+      <input type="text" name="rCity" [(ngModel)]="restaurantFormModel.city" placeholder="City" class="input-style" required #City="ngModel">
+      <div class="form-control-feedback"
+          *ngIf="City.errors && (City.dirty || City.touched)">
+        <p *ngIf="City.errors.required">Enter valid City Name</p>
+      </div>
+      
+      <input type="text" name="rState" [(ngModel)]="restaurantFormModel.state" placeholder="State" class="input-style" required #State="ngModel">
+      <div class="form-control-feedback"
+          *ngIf="State.errors && (State.dirty || State.touched)">
+        <p *ngIf="State.errors.required">Enter valid State Name</p>
+      </div>
+      
+      <input type="text" name="rZip" [(ngModel)]="restaurantFormModel.zip" placeholder="Zip Code" class="input-style">
+      <input type="text" name="rUrl" [(ngModel)]="restaurantFormModel.url" placeholder="Restaurant Website" class="input-style">
+    
+      <hr/><h4>Operating Hours</h4>
+      <div class="row">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block" name="rStartDay">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{restaurantFormModel.startday}}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem *ngFor="let weekday of weekdays;index as sIdx;" 
+                      value="sIdx"
+                      (click)="selectedStartDay(sIdx)">{{weekday}}</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div ngbDropdown class="d-inline-block" name="rEndDay">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{restaurantFormModel.endday}}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem *ngFor="let weekday of weekdays;index as eIdx;" 
+                    value="eIdx"
+                    [disabled]="startdayidx > eIdx"
+                    (click)="selectedEndDay(eIdx)">{{weekday}}</button>
+            </div>
+          </div>
+        </div>        
+      </div>
+
+      <div *ngIf="displayalert" style="width: 80%;margin: 0px auto;">
+          <div class="alert-error-msg">
+              <ngb-alert [type]="warning" (close)="close(alert)">{{alertMsg}}</ngb-alert>
+          </div>    
+      </div>
+
+      <div>
+        <div class='half-block'>
+        <ngb-timepicker name="sTimePick" [(ngModel)]="restaurantFormModel.starttime" [meridian]=true></ngb-timepicker>
+        </div>
+
+        <div class='half-block'>
+          <ngb-timepicker name="eTimePick" [(ngModel)]="restaurantFormModel.endtime" [meridian]=true></ngb-timepicker>
+        </div>
+      </div>
+
+      <div>
+        <button id="sub" type="submit" class="butn" (click)="addNewRestaurant()">Submit</button>
+        <button id="can" type="cancel" class="butn" (click)="goBacktoRestaurantsListPage()">Cancel</button>
+      </div>
+
+    </form>
+</div>

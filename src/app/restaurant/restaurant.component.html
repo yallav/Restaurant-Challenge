@@ -1,0 +1,28 @@
+
+<div  class="container" 
+  class='restaurant'>
+  <div class="row">
+    <div class="col-sm-4" >
+      <img [src]="restaurant.image" class="img-rounded" 
+          style="width:14rem; height:14rem; border-radius: 0.3em;">
+    </div>
+    <div class="col-sm-8">
+      <div class="row">
+        <div class="col-sm-12">
+          <div style="display: inline-block;margin-right: 1%"> <i class="fa fa-cutlery" aria-hidden="true"></i> </div>
+          <label> {{restaurant.restname}}</label> 
+        </div>
+        <div class="col-sm-12"> 
+          <div style="display: inline-block;margin-right: 1%"> <i class="fa fa-address-card" aria-hidden="true"></i> </div>
+          <label> Address</label> 
+          <label> {{restaurant.address}} </label>
+        </div>
+        <div class="col-sm-12"> 
+          <div style="display: inline-block;margin-right: 1%"> <i class="fa fa-clock-o" aria-hidden="true"></i> </div>
+          <label> Opening Hours</label>
+          <div style="padding-left: 2%" class='timings' *ngFor="let openinghour of restaurant.opening_hours"> {{openinghour}} </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

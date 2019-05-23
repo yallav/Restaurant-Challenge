@@ -1,0 +1,17 @@
+<div [ngClass]="{'headercls': scrollCSSDisable, 'headerscrlcss': scrollCSSEnable}">
+    <div style="width:60%; margin: 0px auto;">
+      <div style="width:70%; margin: 0px auto;">
+          <ul>
+              <li class="menucls"><a (click)="navigateToRestaurantsListPage()">Home</a></li>
+              <li class="menucls"><a href="#aboutus">About Us</a></li>
+              <li class="services menucls">Services
+                <ul class="dropdown-content">
+                  <li><a href="#">Website Development</a> </li>
+                  <li><a href="#">Testing</a> </li>
+                  <li><a href="#">UI/UX Designing</a> </li>
+                </ul>
+              </li>
+            </ul>
+      </div>
+    </div>
+  </div>

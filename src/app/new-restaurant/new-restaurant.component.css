@@ -1,0 +1,54 @@
+.mid-container {
+    width: 50%;
+    margin: 0px auto;
+    padding: 2em 4em;
+    background-color: white;
+    box-shadow: 0 1px 2px 0px #c8c8c8
+}
+
+.input-style {
+    margin: .5em 0;
+    padding: .5em;
+    width: 100%;
+    border: 0; border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+.half-block {
+    width: 50%;
+    display: inline-block;
+}
+
+.alert-error-msg {
+    width: 80%; 
+    margin-top: 2%;
+    background-color: rgba(224, 18, 18, 0.932);
+    border-radius: 3px;
+    color: white;
+    transition: all 2s linear;
+}
+
+.alert-success-msg {
+    width: 90%; 
+    margin-top: 2%;
+    background-color: rgba(4, 59, 36, 0.932);
+    border-radius: 3px;
+    color: white;
+    transition: all 2s linear;
+}
+
+.form-control-feedback{
+    background-color: rgba(224, 18, 18, 0.932);
+    border-radius: 3px;
+    background-color: white;
+    color: red;
+    transition: all 0s linear 2s;
+}
+
+.butn {
+    border: 0;
+    padding: .3em .7em;
+    color: white;
+    margin-right: .3em;
+    background-color: #234567;
+}
